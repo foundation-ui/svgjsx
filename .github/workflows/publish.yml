@@ -1,11 +1,12 @@
 name: Publish
 
 on:
-  workflow_run:
-    branches: [main]
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
+
+env:
+  CI: true
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
