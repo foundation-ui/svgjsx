@@ -2,9 +2,15 @@
 
 Open Source Command Line Interfaces for Foundation-ui.
 
-![hero](public/hero.jpg)
+![hero](public/hero-cli.jpg)
 
-## Learn More
+## Packages
+
+| Name     | Description                                | Source                                                                                 |
+| :------- | :----------------------------------------- | :------------------------------------------------------------------------------------- |
+| `svgjsx` | Transform SVG files into React components. | [packages/svgjsx](https://github.com/foundation-ui/cli/tree/cli/setup/packages/svgjsx) |
+
+## Learn More about Foundation-ui
 
 To learn more about Foundation-ui, take a look at the following resources:
 

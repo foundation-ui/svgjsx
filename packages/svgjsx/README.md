@@ -2,6 +2,8 @@
 
 The `fui/icons generate` command transforms SVG files into React components and creates an `index.tsx` file containing all components.
 
+![hero](../../public/hero-svgjsx.jpg)
+
 ## Usage
 
 To transforms SVG files into React components, run:
