@@ -2,6 +2,8 @@
 
 Open Source Command Line Interfaces for Foundation-ui.
 
+![hero](public/hero.jpg)
+
 ## Learn More
 
 To learn more about Foundation-ui, take a look at the following resources:
