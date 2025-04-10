@@ -1,6 +1,6 @@
 {
   "name": "@foundation-ui/svgjsx",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Command Line Interface to transform SVG assets into JSX components.",
   "main": "",
   "scripts": {
