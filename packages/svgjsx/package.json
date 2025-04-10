@@ -22,8 +22,7 @@
     "url": "git@github.com:foundation-ui/cli.git"
   },
   "publishConfig": {
-    "provenance": true,
-    "access": "public"
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
   },
   "license": "MIT"
 }
