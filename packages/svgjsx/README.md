@@ -28,7 +28,7 @@ Convert SVG files from the default `./svg` directory to React components in the 
 pnpx fui/icons generate
 ```
 
-#### Specify Source and Output Directories:
+#### Specify Source and Output Directories
 
 Convert SVG files from the assets/svg directory to React components in the components/icons directory:
 
@@ -36,7 +36,7 @@ Convert SVG files from the assets/svg directory to React components in the compo
 pnpx fui/icons generate -s assets/svg -o components/icons
 ```
 
-#### Show Help:
+#### Show Help
 
 Display the help message to see available options:
 
@@ -46,15 +46,15 @@ pnpx fui/icons generate -h
 
 ## Workflow
 
-#### Prepare SVG Files:
+#### Prepare SVG Files
 
 Place all SVG files you want to convert into the specified source directory (default: ./svg).
 
-#### Run the Command:
+#### Run the Command
 
 Execute the `pnpx fui/icons generate` command with the desired options.
 
-#### Generated Output:
+#### Generated Output
 
 The tool will generate an `index.tsx` file in the specified output directory (default: ./icons). This file will contain React components, one for each SVG file.
 
