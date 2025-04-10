@@ -1,5 +1,11 @@
 # @foundation-ui/svgjsx
 
+## 1.0.8
+
+### Patch Changes
+
+- Update scripts
+
 ## 1.0.7
 
 ### Patch Changes
