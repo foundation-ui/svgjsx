@@ -12,6 +12,8 @@ importers:
         specifier: ^2.28.1
         version: 2.28.1
 
+  packages/svgjsx: {}
+
 packages:
 
   '@babel/runtime@7.27.0':
