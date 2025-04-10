@@ -2,7 +2,7 @@
 
 Open Source Command Line Interfaces for Foundation-ui.
 
-![hero](public/hero-cli.jpg)
+![hero](public/hero.jpg)
 
 ## Packages
 
