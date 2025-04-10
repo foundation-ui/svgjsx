@@ -4,7 +4,7 @@
   "description": "Open Source Command Line Interfaces for Foundation-ui.",
   "main": "",
   "scripts": {
-    "generate:icons": "./src/libs/svgjsx.sh",
+    "generate": "./src/libs/svgjsx.sh",
     "postinstall": "chmod +x ./src/libs/svgjsx.sh"
   },
   "bin": {
