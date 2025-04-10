@@ -1,0 +1,28 @@
+{
+  "name": "@foundation-ui/svgjsx",
+  "version": "1.0.1",
+  "description": "Command Line Interface to transform SVG assets into JSX components.",
+  "main": "",
+  "scripts": {
+    "svg:jsx": "./src/script.sh",
+    "postinstall": "chmod +x ./src/script.sh"
+  },
+  "bin": {
+    "fui/svg:jsx": "./src/script.sh"
+  },
+  "keywords": [
+    "svg",
+    "jsx",
+    "cli"
+  ],
+  "author": "Nicolas Nunes",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:foundation-ui/cli.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
+  },
+  "license": ""
+}
