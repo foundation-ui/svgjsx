@@ -1,5 +1,11 @@
 # @foundation-ui/svgjsx
 
+## 1.0.5
+
+### Patch Changes
+
+- npmrc fix
+
 ## 1.0.4
 
 ### Patch Changes
