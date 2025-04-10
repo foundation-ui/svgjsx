@@ -8,7 +8,7 @@
     "postinstall": "chmod +x ./src/script.sh"
   },
   "bin": {
-    "generate": "./src/script.sh"
+    "@foundation-ui/svgjsx": "./src/script.sh"
   },
   "keywords": [
     "svg",
