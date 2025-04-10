@@ -1,6 +1,7 @@
 {
-  "name": "@fui-oss/svgjsx",
-  "version": "1.0.7",
+  "name": "@foundation-ui/svgjsx",
+  "version": "1.0.5",
+  "private": "false",
   "description": "Command Line Interface to transform SVG assets into JSX components.",
   "main": "",
   "scripts": {
@@ -8,7 +9,7 @@
     "postinstall": "chmod +x ./src/script.sh"
   },
   "bin": {
-    "@@fui-oss/svgjsx": "./src/script.sh"
+    "@foundation-ui/svgjsx": "./src/script.sh"
   },
   "keywords": [
     "svg",
@@ -19,10 +20,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:@fui-oss/cli.git"
+    "url": "git@github.com:foundation-ui/cli.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
   },
   "license": "MIT"
 }

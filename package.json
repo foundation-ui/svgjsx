@@ -1,9 +1,9 @@
 {
-  "name": "@fui-oss/cli",
+  "name": "@foundation-ui/cli",
   "version": "1.0.0",
   "description": "Open Source Command Line Interfaces for Foundation-ui.",
   "scripts": {
-    "svg:jsx": "pnpm --filter @@fui-oss/svgjsx svg:jsx",
+    "svg:jsx": "pnpm --filter @foundation-ui/svgjsx svg:jsx",
     "ci:release": "pnpm changeset publish"
   },
   "keywords": [
