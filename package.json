@@ -2,28 +2,16 @@
   "name": "@foundation-ui/cli",
   "version": "1.0.0",
   "description": "Open Source Command Line Interfaces for Foundation-ui.",
-  "main": "",
   "scripts": {
-    "generate": "./src/libs/svgjsx.sh",
-    "postinstall": "chmod +x ./src/libs/svgjsx.sh",
-    "ci:release": "pnpm changeset publish"
-  },
-  "bin": {
-    "fui/icons": "./src/libs/svgjsx.sh"
+    "svg:jsx": "pnpm --filter @foundation-ui/svgjsx svg:jsx",
+    "ci:publish": "pnpm publish -r"
   },
   "keywords": [
-    "react",
-    "svg",
-    "icons",
     "cli"
   ],
   "author": "Nicolas Nunes",
   "devDependencies": {
     "@changesets/cli": "^2.28.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:foundation-ui/cli.git"
   },
   "bugs": {
     "url": "https://github.com/foundation-ui/cli/issues"
