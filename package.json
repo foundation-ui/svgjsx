@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "generate": "./src/libs/svgjsx.sh",
-    "postinstall": "chmod +x ./src/libs/svgjsx.sh"
+    "postinstall": "chmod +x ./src/libs/svgjsx.sh",
+    "ci:release": "pnpm changeset publish"
   },
   "bin": {
     "fui/icons": "./src/libs/svgjsx.sh"
@@ -17,7 +18,9 @@
     "cli"
   ],
   "author": "Nicolas Nunes",
-
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:foundation-ui/cli.git"
