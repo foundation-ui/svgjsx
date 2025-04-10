@@ -2,9 +2,10 @@
   "name": "@foundation-ui/cli",
   "version": "1.0.0",
   "description": "Open Source Command Line Interfaces for Foundation-ui.",
+  "main": "src/script.sh",
   "scripts": {
     "svg:jsx": "pnpm --filter @foundation-ui/svgjsx svg:jsx",
-    "ci:release": "pnpm changeset publish"
+    "ci:publish": "pnpm changeset publish --access public"
   },
   "keywords": [
     "cli"
