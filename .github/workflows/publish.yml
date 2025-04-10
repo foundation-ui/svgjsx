@@ -20,14 +20,11 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code repository
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
@@ -35,12 +32,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Create and publish versions
+      - name: Publish Packages
         uses: changesets/action@v1
         with:
-          commit: "chore: update versions"
-          title: "chore: update versions"
           publish: pnpm ci:release
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_CI_TOKEN }}
