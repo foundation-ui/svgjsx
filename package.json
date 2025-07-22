@@ -1,22 +1,49 @@
 {
-  "name": "@foundation-ui/cli",
+  "name": "svgjsx",
   "version": "1.0.0",
-  "description": "Open Source Command Line Interfaces for Foundation-ui.",
-  "main": "src/script.sh",
+  "description": "Open Source Command Line Interfaces to generate JSX Icon Components from SVGs.",
+  "main": "dist/index.js",
+  "bin": {
+    "svgjsx": "dist/index.js"
+  },
   "scripts": {
-    "svg:jsx": "pnpm --filter @foundation-ui/svgjsx init",
-    "ci:release": "pnpm changeset publish"
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "watch": "nodemon --exec ts-node src/index.ts",
+    "prepublishOnly": "pnpm run build",
+    "clean": "rm -rf dist"
   },
   "keywords": [
-    "cli"
+    "cli",
+    "react",
+    "svg",
+    "cli",
+    "typescript",
+    "jsx",
+    "reactjs",
+    "svg-icons",
+    "svg-to-jsx"
   ],
   "author": "Nicolas Nunes",
-  "devDependencies": {
-    "@changesets/cli": "^2.28.1"
-  },
   "bugs": {
     "url": "https://github.com/foundation-ui/cli/issues"
   },
   "homepage": "https://github.com/foundation-ui/cli#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "fp-ts": "^2.16.10"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1",
+    "@types/commander": "^2.12.5",
+    "@types/node": "^24.1.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "packageManager": "pnpm@10.10.0"
 }
