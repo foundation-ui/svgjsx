@@ -4,11 +4,7 @@ import {
   writeFile,
   appendFile,
 } from "../core/file-operations";
-import {
-  createTsxComponent,
-  generateHeader,
-  generateExportList,
-} from "../core/transformers";
+import { createTsxComponent, generateHeader } from "../core/transformers";
 
 import { success, failure, chain, tap, isSuccess } from "../utils/result";
 
@@ -123,12 +119,6 @@ export const generateIcons = (
         );
         skippedFiles.push(svgPath);
       }
-    }
-
-    // Optionally append export list
-    const exportList = generateExportList(componentNames);
-    if (exportList && componentNames.length > 0) {
-      appendFile(config.outputFile, exportList);
     }
 
     return success({
