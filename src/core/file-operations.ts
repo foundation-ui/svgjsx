@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import { success, failure, tryCatch } from "../utils/result";
+import { failure, tryCatch } from "../utils/result";
 
 import type { SvgFile, Result } from "../types";
 
