@@ -4,7 +4,11 @@ import {
   writeFile,
   appendFile,
 } from "../core/file-operations";
-import { createTsxComponent, generateHeader } from "../core/transformers";
+import {
+  createTsxComponent,
+  generateExportList,
+  generateHeader,
+} from "../core/transformers";
 
 import { success, failure, chain, tap, isSuccess } from "../utils/result";
 
@@ -27,25 +31,12 @@ const logSkippedFile = (filename: string, reason?: string): void => {
   console.warn(`⚠️  Skipped ${filename}: ${message}`);
 };
 
-const logProgress = (current: number, total: number): void => {
-  if (total > 10 && current % Math.ceil(total / 10) === 0) {
-    const percentage = Math.round((current / total) * 100);
-    console.log(`📊 Progress: ${percentage}% (${current}/${total})`);
-  }
-};
-
 const getMemoryUsage = (): number =>
   Math.round(process.memoryUsage().heapUsed / 1024);
 
 const processSvgFile =
   (config: GeneratorConfig) =>
-  (
-    svgPath: string,
-    index: number,
-    total: number
-  ): Result<TsxComponent | null, Error> => {
-    logProgress(index + 1, total);
-
+  (svgPath: string): Result<TsxComponent | null, Error> => {
     return chain<SvgFile, TsxComponent | null, Error>((svgFile) => {
       const component = createTsxComponent(svgFile);
 
@@ -105,7 +96,7 @@ export const generateIcons = (
         );
       }
 
-      const result = processSvgFile(config)(svgPath, i, svgFiles.length);
+      const result = processSvgFile(config)(svgPath);
       if (isSuccess(result)) {
         if (result.value !== null) {
           successCount++;
@@ -121,6 +112,11 @@ export const generateIcons = (
       }
     }
 
+    const exportList = generateExportList(componentNames);
+    if (exportList && componentNames.length > 0) {
+      appendFile(config.outputFile, exportList);
+    }
+
     return success({
       componentsCount: successCount,
       memoryUsed: getMemoryUsage(),
@@ -130,7 +126,7 @@ export const generateIcons = (
   })(findSvgFiles(config.sourceDir));
 };
 
-// Display completion message
+// Log completion message
 export const displayCompletion = (result: GenerationResult): void => {
   console.log("\n🎉 Generation completed!");
   console.log(`📦 Generated ${result.componentsCount} components`);
@@ -142,8 +138,8 @@ export const displayCompletion = (result: GenerationResult): void => {
   }
 };
 
-// Display error and exit
+// Log Error and Exit process
 export const handleError = (error: Error): never => {
-  console.error(`❌ ${error.message}`);
+  console.error(`${error.message}`);
   process.exit(1);
 };

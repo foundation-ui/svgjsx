@@ -59,13 +59,11 @@ Examples:
     )
     .action(handleGenerate);
 
-  // Version command
   program
     .command("version")
     .description("Show version information")
     .action(() => {
       console.log(`svgjsx v${program.version()}`);
-      console.log("Built with ❤️  using functional programming principles");
     });
 
   return program;
