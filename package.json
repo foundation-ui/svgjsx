@@ -1,5 +1,5 @@
 {
-  "name": "svgjsx",
+  "name": "@foundation-ui/svgjsx",
   "version": "1.0.1",
   "description": "Open Source Command Line Interfaces to generate JSX Icon Components from SVGs.",
   "main": "dist/index.js",
