@@ -196,3 +196,6 @@ storybook-static/
 
 # Nx
 .nx/cache
+
+# Npm variables
+.npmrc
