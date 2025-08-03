@@ -1,24 +1,58 @@
-# Foundation-ui - CLI
+# SVGJSX CLI
 
-Open Source Command Line Interfaces for Foundation-ui.
+> Open Source Command Line Interface to generate JSX Icon Components from SVGs.
 
-![hero](public/hero.jpg)
+## Installation
 
-## Packages
+```bash
+# Using npm
+npm install -g svgjsx
 
-| Name     | Description                                | Source                                                                                 |
-| :------- | :----------------------------------------- | :------------------------------------------------------------------------------------- |
-| `svgjsx` | Transform SVG files into React components. | [packages/svgjsx](https://github.com/foundation-ui/cli/tree/cli/setup/packages/svgjsx) |
+# Using pnpm
+pnpm add -g svgjsx
 
-## Learn More about Foundation-ui
+# Using yarn
+yarn global add svgjsx
+```
 
-To learn more about Foundation-ui, take a look at the following resources:
+## Quick Start
 
-- [Foundation-ui Documentation](https://github.com/foundation-ui) - learn about Foundation-ui features and API.
-- [Learn Foundation-ui](https://github.com/foundation-ui) - an interactive Foundation-ui tutorial.
+```bash
+# Generate JSX components from SVGs
+svgjsx generate
 
-You can check out [the Foundation-ui GitHub repository](https://github.com/foundation-ui) - your feedback and contributions are welcome!
+# With custom directories
+svgjsx generate --source ./assets/icons --output ./src/components/icons
 
-## Contribute
+# Watch mode for development
+svgjsx generate --watch --verbose
+```
 
-Please read the [contributing guide](https://github.com/foundation-ui).
+## Examples
+
+This example shows basic usage of the SVGJSX CLI.
+
+### Setup
+
+1. Install dependencies: `npm install`
+2. Add SVG files to the `svg/` directory
+3. Run generation: `npm run generate-icons`
+4. Import and use components from `src/icons/`
+
+### Usage
+
+```jsx
+import { Icon } from "./src/icons";
+
+function App() {
+  return (
+    <Icon>
+      <Icon.MyIcon className="w-6 h-6" />
+    </Icon>
+  );
+}
+```
+
+## License
+
+MIT © [Nicolas Nunes](https://github.com/foundation-ui/cli)
