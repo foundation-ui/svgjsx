@@ -25,9 +25,7 @@ const logComponent = (component: TsxComponent, outputPath: string): void => {
 };
 
 const logSkippedFile = (filename: string, reason?: string): void => {
-  const message = reason
-    ? `${reason}`
-    : "Could not generate valid component name";
+  const message = reason ? `${reason}` : "Invalid component name";
   console.warn(`⚠️  Skipped ${filename}: ${message}`);
 };
 
@@ -59,7 +57,6 @@ const processSvgFile =
 export const generateIcons = (
   config: GeneratorConfig
 ): Result<GenerationResult, Error> => {
-  console.log(`🚀 Starting icon generation...`);
   console.log(`📂 Source: ${config.sourceDir}`);
   console.log(`📁 Output: ${config.outputFile}`);
 

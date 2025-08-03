@@ -13,7 +13,7 @@ import { isSuccess } from "./utils/result";
 import type { CliOptions } from "./types";
 
 const handleGenerate = (options: CliOptions): void => {
-  console.log("🔧 Validating configuration...");
+  console.log("🔧 Checking configuration...");
 
   const configResult = validateConfig(options.source, options.output);
 
