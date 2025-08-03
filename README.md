@@ -2,17 +2,19 @@
 
 > Open Source Command Line Interface to generate JSX Icon Components from SVGs.
 
+[![npm version](https://img.shields.io/npm/v/@usefui/svgjsx.svg)](https://npmjs.com/package/@usefui/svgjsx)
+
 ## Installation
 
 ```bash
 # Using npm
-npm install -g svgjsx
+npm install -g @usefui/svgjsx
 
 # Using pnpm
-pnpm add -g svgjsx
+pnpm add -g @usefui/svgjsx
 
 # Using yarn
-yarn global add svgjsx
+yarn global add @usefui/svgjsx
 ```
 
 ## Quick Start
