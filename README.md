@@ -57,4 +57,4 @@ function App() {
 
 ## License
 
-MIT © [Nicolas Nunes](https://github.com/foundation-ui/cli)
+MIT © [Nicolas Nunes](https://github.com/foundation-ui/svgjsx)

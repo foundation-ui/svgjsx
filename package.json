@@ -25,9 +25,9 @@
   ],
   "author": "Nicolas Nunes",
   "bugs": {
-    "url": "https://github.com/foundation-ui/cli/issues"
+    "url": "https://github.com/foundation-ui/svgjsx/issues"
   },
-  "homepage": "https://github.com/foundation-ui/cli#readme",
+  "homepage": "https://github.com/foundation-ui/svgjsx#readme",
   "license": "MIT",
   "dependencies": {
     "commander": "^14.0.0",
