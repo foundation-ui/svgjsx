@@ -21,9 +21,9 @@ This example shows basic usage of the SVGJSX CLI.
 
 ### Setup
 
-2. Add SVG files to the `svg/` directory
-3. Run generation script: `pnpx @usefui/svgjsx`
-4. Import and use components from `src/icons/`
+1. Add SVG files to the `svg/` directory
+2. Run generation script: `pnpx @usefui/svgjsx generate`
+3. Import and use components from `src/icons/`
 
 ### Usage
 
@@ -33,7 +33,7 @@ import { Icon } from "./src/icons";
 function App() {
   return (
     <Icon>
-      <Icon.MyIcon className="w-6 h-6" />
+      <Icon.MyIcon />
     </Icon>
   );
 }
