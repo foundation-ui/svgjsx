@@ -21,23 +21,72 @@ export const sanitizeComponentName = (filename: string): string => {
   return isInvalidComponentName(name) ? "" : name;
 };
 
+export const replaceColorsWithCurrentColor = (content: string): string => {
+  const colorAttributes = [
+    "fill",
+    "stroke",
+    "stop-color",
+    "flood-color",
+    "lighting-color",
+  ];
+
+  // Create regex pattern for color attributes
+  const attributePattern = colorAttributes.join("|");
+
+  // Color value patterns
+  const colorPatterns = [
+    // Hex colors: #000, #000000, #000000ff
+    /#[0-9a-fA-F]{3,8}/,
+    // RGB/RGBA: rgb(0,0,0), rgba(0,0,0,1)
+    /rgba?\s*\(\s*[^)]+\)/,
+    // HSL/HSLA: hsl(0,0%,0%), hsla(0,0%,0%,1)
+    /hsla?\s*\(\s*[^)]+\)/,
+    // Named colors
+    /\b(?:black|white|red|green|blue|yellow|orange|purple|pink|brown|gray|grey|cyan|magenta|lime|navy|maroon|olive|teal|silver|aqua|fuchsia|transparent)\b/i,
+  ];
+
+  // Combine all color patterns into one regex
+  const allColorPattern = new RegExp(
+    colorPatterns.map((p) => p.source).join("|"),
+    "gi"
+  );
+
+  // Replace color attributes
+  const regex = new RegExp(
+    `(${attributePattern})\\s*=\\s*["']([^"']*?)["']`,
+    "gi"
+  );
+
+  return content.replace(regex, (match, attribute, value) => {
+    if (allColorPattern.test(value)) return `${attribute}="currentColor"`;
+    return match; // Return original if no color found
+  });
+};
+
 export const processSvgContent = (content: string): string => {
   let processed = content;
+
+  // Remove XML declaration and comments
   processed = processed
-    // Remove XML declaration and comments
     .replace(/<\?xml[^>]*\?>/g, "")
-    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<!--[\s\S]*?-->/g, "");
 
-    // Convert kebab-case attributes to camelCase
-    .replace(/([a-zA-Z]+)-([a-zA-Z])/g, (_, p1, p2) => p1 + p2.toUpperCase())
+  // Replace colors with currentColor
+  processed = replaceColorsWithCurrentColor(processed);
 
-    // Handle React-specific attribute name changes
+  // Convert kebab-case attributes to camelCase
+  processed = processed.replace(
+    /([a-zA-Z]+)-([a-zA-Z])/g,
+    (_, p1, p2) => p1 + p2.toUpperCase()
+  );
+
+  // Handle React-specific attribute name changes
+  processed = processed
     .replace(/class=/g, "className=")
-    .replace(/for=/g, "htmlFor=")
+    .replace(/for=/g, "htmlFor=");
 
-    // Normalize whitespace and trim
-    .replace(/\s+/g, " ")
-    .trim();
+  // Normalize whitespace and trim
+  processed = processed.replace(/\s+/g, " ").trim();
 
   // Ensure props are spread on svg element
   if (processed.includes("<svg") && !processed.includes("{...props}")) {
@@ -76,7 +125,7 @@ export const Icon = ({ children, ...restProps }: React.ComponentProps<"svg">) =>
       viewBox="0 0 24 24"
       width={16}
       height={16}
-      fill={"currentColor"}
+      fill="currentColor"
       {...restProps}
     >
       {children}
