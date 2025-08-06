@@ -1,5 +1,11 @@
 # svgjsx
 
+## 1.0.4
+
+### Patch Changes
+
+- Replace color definition in svg tags
+
 ## 1.0.3
 
 ### Patch Changes
